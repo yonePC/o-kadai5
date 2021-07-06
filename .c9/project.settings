@@ -1,4 +1,13 @@
 {
+    "ace": {
+        "@tabSize": 2
+    },
+    "general": {
+        "@stripws": true
+    },
+    "instance": {
+        "@automaticShutdown": "30"
+    },
     "language": {
         "tern_defs": {
             "json()": {
