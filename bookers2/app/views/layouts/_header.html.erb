@@ -22,10 +22,12 @@
       </div>
     </div>
   </nav>
-  <%= form_with url: searches_path, method: :get, local: :true do |f| %>
+  <% if user_signed_in? %>
+    <%= form_with url: searches_path, method: :get, local: :true do |f| %>
       <%= f.select :range, options_for_select([['User'], ['Book']]) %>
-      <%= f.select :search, options_for_select([["部分一致","partial_match"], ["完全一致","perfect_match"]]) %>
+      <%= f.select :search, options_for_select([["部分一致","partial_match"], ["完全一致","perfect_match"], ["前方一致","forward_match"], ["後方一致","backward_match"]]) %>
       <%= f.text_field :word %>
       <%= f.submit "検索" %>
+  <% end %>    
 <% end %>
 </header>
